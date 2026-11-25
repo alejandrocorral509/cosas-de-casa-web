@@ -174,6 +174,15 @@
     setTimeout(function () { var h = $('.hero'); if (h) h.classList.add('hero-done'); }, 2500);
   }
 
+  /* Mapa de Google solo cuando el visitante lo pide (sin cookies de terceros al entrar) */
+  function initMap() {
+    var btn = $('#map-load'), box = $('#map');
+    if (!btn || !box) return;
+    btn.addEventListener('click', function () {
+      box.innerHTML = '<iframe title="Mapa: Calle Porvenir 36, Jerez de la Frontera" src="https://www.google.com/maps?q=Calle+Porvenir+36,+11401+Jerez+de+la+Frontera&output=embed" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>';
+    });
+  }
+
   function boot() {
     safe(initHeroSafety, 'hero');
     safe(initNav, 'nav');
@@ -183,6 +192,7 @@
     safe(initGalleries, 'galleries');
     safe(initLightbox, 'lightbox');
     safe(initForm, 'form');
+    safe(initMap, 'map');
     safe(initYear, 'year');
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();

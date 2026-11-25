@@ -94,3 +94,20 @@
 #   RewriteCond %{REQUEST_FILENAME}.html -f
 #   RewriteRule ^(.+?)/?$ $1.html [L]
 # </IfModule>
+
+# ----- Redirecciones 301 desde las direcciones de la web antigua -----
+# Conservan el posicionamiento en Google y evitan errores a quien entra
+# desde un enlace antiguo. (".{1,2}" cubre letras con tilde: á, ú)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^cortinas-y-estores/?$ /#cortinas [R=301,NE,L]
+  RewriteRule ^sof.{1,2}s/?$ /#sofas [R=301,NE,L]
+  RewriteRule ^entelado-de-paredes-y-papel-pintado/?$ /#paredes [R=301,NE,L]
+  RewriteRule ^telas-de-exterior-y-telas-n.{1,2}uticas/?$ /#exterior [R=301,NE,L]
+  RewriteRule ^contacto/?$ /#contacto [R=301,NE,L]
+  RewriteRule ^aviso-legal/?$ /aviso-legal.html [R=301,L]
+  RewriteRule ^privacy/?$ /privacidad.html [R=301,L]
+</IfModule>
+
+# ----- Página de error con redirección inteligente -----
+ErrorDocument 404 /404.html

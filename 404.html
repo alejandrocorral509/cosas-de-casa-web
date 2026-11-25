@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página no encontrada · Cosas de Casa</title>
+  <meta name="robots" content="noindex">
+  <script>
+    /* Redirige las direcciones de la web antigua a su sección nueva.
+       Funciona en cualquier alojamiento (también donde no hay .htaccess). */
+    (function () {
+      var p = decodeURIComponent(location.pathname).toLowerCase().replace(/\/+$/, '');
+      var base = p.indexOf('/cosas-de-casa-web') === 0 ? '/cosas-de-casa-web' : '';
+      p = p.slice(base.length);
+      var map = {
+        '/cortinas-y-estores': '/#cortinas',
+        '/sofás': '/#sofas', '/sofas': '/#sofas',
+        '/entelado-de-paredes-y-papel-pintado': '/#paredes',
+        '/telas-de-exterior-y-telas-náuticas': '/#exterior', '/telas-de-exterior-y-telas-nauticas': '/#exterior',
+        '/contacto': '/#contacto',
+        '/aviso-legal': '/aviso-legal.html',
+        '/privacy': '/privacidad.html'
+      };
+      if (map[p]) location.replace(base + map[p]);
+    })();
+  </script>
+  <link rel="preload" href="/assets/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f3eee5; color: #1f2523; font: 300 17px/1.6 system-ui, sans-serif; text-align: center; padding: 24px; }
+    h1 { font: 400 clamp(40px, 7vw, 72px)/1 Georgia, serif; margin: 0 0 16px; }
+    a { display: inline-block; margin-top: 18px; background: #2f4f4c; color: #f3eee5; padding: 14px 26px; border-radius: 999px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Página no encontrada</h1>
+    <p>La página que busca no existe o ha cambiado de sitio.</p>
+    <a href="/" id="home">Volver a Cosas de Casa</a>
+  </main>
+  <script>
+    if (location.pathname.indexOf('/cosas-de-casa-web') === 0) document.getElementById('home').href = '/cosas-de-casa-web/';
+  </script>
+</body>
+</html>

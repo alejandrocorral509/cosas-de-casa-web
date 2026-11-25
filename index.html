@@ -7,15 +7,18 @@
   <meta name="description" content="Decoración textil a medida en Jerez de la Frontera: cortinas y estores, sofás tapizados, papel pintado, entelado de paredes y telas náuticas y de exterior. Calle Porvenir 36. Tel. 956 33 72 51.">
   <meta property="og:title" content="Cosas de Casa · Decoración textil a medida">
   <meta property="og:description" content="Hacemos de tu casa un hogar exclusivo. Cortinas, sofás, papel pintado y telas de exterior en Jerez de la Frontera.">
-  <meta property="og:image" content="assets/img/caspian-01.webp">
+  <meta property="og:image" content="https://www.cosasdecasajerez.es/assets/img/caspian-01.webp">
+  <meta property="og:url" content="https://www.cosasdecasajerez.es/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <link rel="canonical" href="https://www.cosasdecasajerez.es/">
   <meta name="theme-color" content="#f3eee5">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f4f4c'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23f3eee5' text-anchor='middle'%3ECC%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261125">
+  <link rel="preload" href="assets/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261126">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"HomeGoodsStore","name":"Cosas de Casa","telephone":"+34956337251","email":"clientes@cosasdecasajerez.es","url":"https://www.cosasdecasajerez.es/","image":"assets/img/caspian-01.webp","address":{"@type":"PostalAddress","streetAddress":"Calle Porvenir 36","addressLocality":"Jerez de la Frontera","postalCode":"11401","addressRegion":"Cádiz","addressCountry":"ES"},"openingHours":"Mo-Fr 09:30-13:30","sameAs":["https://www.instagram.com/cosasdecasajerez/","https://facebook.com/Cosas-de-Casa-Tapiceria-Jerez-107629264191190"]}
+  {"@context":"https://schema.org","@type":"HomeGoodsStore","name":"Cosas de Casa","telephone":"+34956337251","email":"clientes@cosasdecasajerez.es","url":"https://www.cosasdecasajerez.es/","image":"https://www.cosasdecasajerez.es/assets/img/caspian-01.webp","address":{"@type":"PostalAddress","streetAddress":"Calle Porvenir 36","addressLocality":"Jerez de la Frontera","postalCode":"11401","addressRegion":"Cádiz","addressCountry":"ES"},"openingHours":"Mo-Fr 09:30-13:30","sameAs":["https://www.instagram.com/cosasdecasajerez/","https://facebook.com/Cosas-de-Casa-Tapiceria-Jerez-107629264191190"]}
   </script>
 </head>
 <body>
@@ -262,8 +265,12 @@
           <div><dt>Lunes a viernes</dt><dd>9:30 – 13:30</dd></div>
           <div><dt>Sábados y domingos</dt><dd>Cerrado</dd></div>
         </dl>
-        <div class="map">
-          <iframe title="Mapa: Calle Porvenir 36, Jerez de la Frontera" src="https://www.google.com/maps?q=Calle+Porvenir+36,+11401+Jerez+de+la+Frontera&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map" id="map">
+          <div class="map-ph">
+            <p>El mapa lo ofrece Google Maps. Al cargarlo, Google recibirá datos de su conexión.</p>
+            <button class="btn btn-solid" type="button" id="map-load">Ver mapa</button>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Calle+Porvenir+36,+11401+Jerez+de+la+Frontera" target="_blank" rel="noopener">o abrir en Google Maps ↗</a>
+          </div>
         </div>
       </div>
 
@@ -274,6 +281,7 @@
         <label>Teléfono<input name="telefono" type="tel" autocomplete="tel"></label>
         <label>Mensaje<textarea name="mensaje" rows="5" required placeholder="Cuéntenos qué necesita: cortinas, sofá, papel pintado, exterior…"></textarea></label>
         <button class="btn btn-solid" type="submit">Enviar mensaje</button>
+        <p class="form-legal">Usaremos sus datos solo para responder a su consulta. Más información en la <a href="privacidad.html">política de privacidad</a>.</p>
         <p class="form-note" id="form-note" role="status">Al enviar se abrirá su programa de correo con el mensaje ya preparado.</p>
       </form>
     </div>
@@ -310,7 +318,7 @@
   </div>
   <div class="wrap footer-legal">
     <p>© <span id="year">2026</span> Cosas de Casa Jerez · Titular: Eva Pérez Martínez · NIF 75866126M</p>
-    <a href="aviso-legal.html">Aviso legal</a>
+    <span class="legal-links"><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a></span>
   </div>
 </footer>
 
@@ -324,6 +332,6 @@
 
 <script defer src="lib/gsap.min.js?v=20261125"></script>
 <script defer src="lib/ScrollTrigger.min.js?v=20261125"></script>
-<script defer src="main.js?v=20261125"></script>
+<script defer src="main.js?v=20261126"></script>
 </body>
 </html>
