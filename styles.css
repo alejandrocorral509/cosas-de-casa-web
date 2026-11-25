@@ -378,8 +378,8 @@ body.menu-open .drawer { clip-path: inset(0 0 0 0); visibility: visible; }
 
 /* ---------- Mapa bajo demanda + textos legales ---------- */
 .map-ph { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px; text-align: center;
-  background: linear-gradient(rgba(243,238,229,.9), rgba(243,238,229,.9)), url('assets/img/papel-romo-japura.webp') center/cover; }
-.map-ph p { margin: 0; max-width: 340px; font-size: 14px; color: var(--ink-2); }
+  background: linear-gradient(rgba(243,238,229,.72), rgba(243,238,229,.72)), url('assets/img/papel-romo-japura.webp') center/cover; }
+.map-ph p { margin: 0; max-width: 340px; font-size: 14px; color: var(--ink); background: rgba(251,248,242,.92); padding: 10px 14px; border-radius: 4px; }
 .map-link { font-size: 14px; color: var(--teal); text-decoration: underline; }
 .form-legal { margin: 0; font-size: 13px; color: var(--mute); }
 .form-legal a, .legal a { text-decoration: underline; }
